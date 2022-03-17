@@ -13,12 +13,12 @@ const Grid = () => {
     e.preventDefault();
   };
 
-  const prueba = () => {
+  const createGrid = () => {
     const row = [];
     for (let i = 0; i < cantidad; i++) {
       row.push(<tr></tr>);
       for (let j = 0; j < cantidad; j++) {
-        row.push(<Cell />);
+        row.push(<Cell cambio={color} />);
       }
     }
     return row;
@@ -36,7 +36,7 @@ const Grid = () => {
           <input type='text' value={cantidad} onChange={handleChange} />
         </form>
       </div>
-      <div>{prueba()}</div>
+      <div>{createGrid()}</div>
       <div className='pt-5'>
         <button
           className='btn btn-dark py-3'
